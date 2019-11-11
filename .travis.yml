@@ -5,6 +5,8 @@ matrix:
     node_js: 8.5.0
     install: yarn
     script: npm install && npm test -- -u
+    on:
+      branch: master
   - stage: Deploy Android
     language: android
     before_install: #1.1
@@ -25,6 +27,8 @@ matrix:
         - addon-google_apis-google-16
     script:
       - cd android && ./gradlew assembleRelease
+    on:
+      branch: master
   - stage: Deploy ios
     language: objective-c
     os: osx
@@ -42,3 +46,9 @@ matrix:
     script:
       - cd ios
       - xcodebuild -scheme shopT -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
+    on:
+      branch: master
+skip_build:
+    - docs/*
+    - README.MD
+    - LICENSE
