@@ -16,11 +16,6 @@ import styles from './style'
 import { doLogin } from '../../actions/view_action/loginAction'
 import { doGetCheckOutInfo } from '../../actions/data_action/checkOutAction'
 
-const args = {
-    number: '096-6699128', // String value with the number to call
-    prompt: false // Optional boolean property. Determines if the user should be prompt prior to the call
-}
-
 class Login extends BaseView {
     constructor(props) {
         super(props)
