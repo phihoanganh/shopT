@@ -4,16 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest",
-    "preinstall": "node scripts/pre-install.js",
-    "appium": "appium",
-    "build:android": "scripts/build-android.sh",
-    "build:ios": "scripts/build-ios.sh",
-    "test:android": "appium-helper --platform android",
-    "test:ios": "appium-helper --platform ios",
-    "test:local-e2e": "OS=both scripts/run-local-tests.sh",
-    "run-emulator:android": "scripts/run-android-emulator.sh",
-    "kill-emulator:android": "scripts/kill-android-emulator.sh"
+    "test": "jest"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.6.2",
