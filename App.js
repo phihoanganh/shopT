@@ -12,7 +12,6 @@ import { Provider, connect } from 'react-redux';
 import React from 'react';
 import routes from './src/views/route';
 import getStore from "./store";
-// import Orientation from 'react-native-orientation';
 
 const AppNavigator = createStackNavigator(routes, {
   initialRouteName: 'splash',
