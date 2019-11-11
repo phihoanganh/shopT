@@ -48,6 +48,17 @@ class CheckOut extends BaseView {
                 <View style={styles.footer_box}>
                     <TouchableOpacity
                         onPress={() => {
+                            if (Object.entries(ship_adss).length === 0 || Object.entries(pay_method).length === 0) {
+                                this.renderPopup(
+                                    'Empty',
+                                    'Please check "shipping address" and "payment method" info again!',
+                                    require('../../assets/images/icon_fail.png'),
+                                    null,
+                                    2,
+                                    null
+                                )
+                                return
+                            }
                             this.props.doBuyProduct(cartList, this.props.productListData.product_list)
                             this.props.clearCartItem()
                             this.resetPage(0, 'confirmation', null)

@@ -8,7 +8,6 @@ import styles from './style';
 import Colors from '../../global/colors';
 import Popup from '../../widgets/popup';
 
-
 class BaseView extends Component {
     constructor(props) {
         super(props);
