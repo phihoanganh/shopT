@@ -11,6 +11,8 @@ matrix:
       - nvm install 6
       - node --version
     install: #1.2
+      - nvm install 9.11.2
+      - npm install -g react-native-cli
       - npm install
       - react-native link
     android: #1.3
