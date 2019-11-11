@@ -24,5 +24,4 @@ matrix:
         - extra-google-m2repository
         - addon-google_apis-google-16
     script:
-      - npm run ci #2
       - cd android && ./gradlew assembleRelease
