@@ -15,10 +15,10 @@
 - From the code folder run:
   + npm install
   + react-native link
-- Run android:
+- Test code on android:
   + Connect android device or simulator
   + run: react-native run-android
-- Run ios
+- Test code on ios
   + run: react-native run-ios
 
 
