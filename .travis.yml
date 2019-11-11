@@ -7,19 +7,19 @@ matrix:
     script: npm install && npm test -- -u
   - stage: Deploy Android
     language: android
-    jdk: oraclejdk8
-    android:
+    before_install: #1.1
+      - nvm install 6
+      - node --version
+    install: #1.2
+      - npm install
+    android: #1.3
       components:
-        - tools
-        - platform-tools
-        - android-26
-        - extra-google-m2repository
+        - build-tools-23.0.1
+        - android-23
+        - extra-android-m2repository
         - extra-google-google_play_services
-    before_install:
-      - nvm install 8.5.0
-      - gem install bundler
-      - bundle install
-    before_script:
-      - ./internals/scripts/travis/gitconfig.sh
-    install: yarn
-    script: npm run deployment:android
+        - extra-google-m2repository
+        - addon-google_apis-google-16
+    script:
+      - npm run ci #2
+      - cd android && ./gradlew assembleRelease
