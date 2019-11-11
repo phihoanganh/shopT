@@ -5,7 +5,7 @@
 </h1>
 
 <p align="center">
-  <strong>Learn once, write anywhere:</strong><br>
+  <strong>ShopT and Travis Ci:</strong><br>
   Build mobile apps with React Native.
 </p>
 
