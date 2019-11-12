@@ -31,7 +31,7 @@ class ProductDetail extends BaseView {
                 <Header
                     cartBtn={true}
                     backBtn={true}
-                    title={item.title}
+                    title={item.name}
                 />
                 <ScrollView>
                     <Image

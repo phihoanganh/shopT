@@ -28,3 +28,8 @@
 - android environment (you can install android studio)
 - ios enviroment (install xcode)
 - nodejs
+
+## 🎉 Note
+- <a href="https://github.com/phihoanganh/shopT/tree/master/docs">Documentation</a>
+- If get any issue, you can download <a href="https://github.com/phihoanganh/shopT/tree/master/rs-app">apk realease here</a> for test.
+- <a href="https://travis-ci.org/phihoanganh/shopT">Travis ci link </a>

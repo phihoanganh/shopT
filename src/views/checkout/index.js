@@ -225,29 +225,34 @@ class CheckOut extends BaseView {
 
     changePayMethod = () => {
         let tempData = this.props.checkOutData
-        let card_name = this.refs.tf_card_name.getValue()
-        let card_num = this.refs.tf_card_num.getValue()
-        let card_mmdd = this.refs.tf_card_mmdd.getValue()
-        let card_cvc = this.refs.tf_card_cvc.getValue()
-        let passValidation = true
-        if (!card_name) {
-            this.refs.tf_card_name.setErrorText('Name must not be empty!')
-            passValidation = false
+        if (this.state.isVisa) {
+            let card_name = this.refs.tf_card_name.getValue()
+            let card_num = this.refs.tf_card_num.getValue()
+            let card_mmdd = this.refs.tf_card_mmdd.getValue()
+            let card_cvc = this.refs.tf_card_cvc.getValue()
+            let passValidation = true
+            if (!card_name) {
+                this.refs.tf_card_name.setErrorText('Name must not be empty!')
+                passValidation = false
+            }
+            if (!card_num) {
+                this.refs.tf_card_num.setErrorText('Must not be empty!')
+                passValidation = false
+            }
+            if (!card_mmdd) {
+                this.refs.tf_card_mmdd.setErrorText('Must not be empty!')
+                passValidation = false
+            }
+            if (!card_cvc) {
+                this.refs.tf_card_cvc.setErrorText('Must not be empty!')
+                passValidation = false
+            }
+            if (!passValidation) return
+            tempData.pay_method = { card_name, card_num, card_mmdd, card_cvc, isVisa: this.state.isVisa }
+        }else{
+            tempData.pay_method = {isVisa: this.state.isVisa }
         }
-        if (!card_num) {
-            this.refs.tf_card_num.setErrorText('Must not be empty!')
-            passValidation = false
-        }
-        if (!card_mmdd) {
-            this.refs.tf_card_mmdd.setErrorText('Must not be empty!')
-            passValidation = false
-        }
-        if (!card_cvc) {
-            this.refs.tf_card_cvc.setErrorText('Must not be empty!')
-            passValidation = false
-        }
-        if (!passValidation) return
-        tempData.pay_method = { card_name, card_num, card_mmdd, card_cvc, isVisa: this.state.isVisa }
+
         this.props.doSetCheckOutInfo(tempData)
         this.setState({ payMethodModal: false })
 
