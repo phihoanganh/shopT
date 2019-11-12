@@ -48,8 +48,3 @@ matrix:
       - xcodebuild -scheme shopT -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
     on:
       branch: master
-ignore:
-  - *.md
-  - docs/*
-  - rs-app/*
-  - LICENSE
