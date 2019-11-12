@@ -69,11 +69,7 @@ class Login extends BaseView {
         )
     }
     doLogin() {
-        // this.setLoading(true)
         this.resetPage(0, 'product_list', null)
-        // let username = this.refs.tf_username.getValue();
-        // let password = this.refs.tf_password.getValue();
-        // this.props.doLogin(username, password)
     }
     componentDidMount() {
         Animated.parallel([
